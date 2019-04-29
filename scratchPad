@@ -1,0 +1,7 @@
+-create utility that opens a scanner and collects words
+-create a word node that holds a string, location list, and next node pointer
+-create a word list that holds word nodes
+-create a location node that holds an integer
+-create a location list that holds location nodes
+
+
