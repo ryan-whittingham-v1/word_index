@@ -29,7 +29,7 @@ class LocationList {
 		temp = firstNode;
 		while (temp != null) { // Crawl through the list
 			if (temp.next != null) { // If not the last location in the list
-				result = result + Integer.toString(temp.location) + ", ";
+				result = result + Integer.toString(temp.location) + ",";
 			}
 			else { // This is the last location, no comma needed
 				result = result + Integer.toString(temp.location);

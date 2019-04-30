@@ -1,6 +1,6 @@
 class WordList {
 	
-	Node firstNode, lastNode, newNode, temp, previous;
+	Node firstNode, newNode, temp, previous;
 
 	//Constructor 
 	public WordList() {
@@ -8,9 +8,9 @@ class WordList {
 	}
 	
 	//Add a new string to the end of the list
-	public void addToEnd(String word, int location){
+	public void add(String word, int location){
 		temp = firstNode;
-		// First search if word is already in the list
+		// Search if word is already in the list
 		while ( temp != null ) { // Crawl through list
 			if ( word.equals( temp.word )) { // If new word equals a word in the list
 				temp.location.addToEnd(location); // Add the index location to the end of the words location list
@@ -20,14 +20,13 @@ class WordList {
 				temp = temp.next; // Move to next word in the list
 			}
 		}
-		
 		// Word was not found in the list so it's a new word
 		newNode = new Node(); // Create new node
 		newNode.word = word; // Assign new word to newNode
 		LocationList ll = new LocationList(); // Create new list of locations for the word
 		ll.addToEnd(location); // Add the index location to the location list
 		newNode.location = ll; // Assign the location list to the word
-		newNode.next = null; // Set new node to point to null
+		newNode.next = null; // Set new word next pointer to null
 		
 		// Insert new word into the word list
 		if(firstNode == null){ // If word list is empty
@@ -46,7 +45,6 @@ class WordList {
 					break;
 				}
 			}
-			
 			if (previous == null){ // New first word in the list
 				newNode.next = firstNode; // New word now points to old first word
 				firstNode = newNode; // Assign new first word
@@ -55,12 +53,6 @@ class WordList {
 				newNode.next = temp;
 				previous.next = newNode;
 			}
-		
-		/*
-			// Add to end of list
-			lastNode.next = newNode; // Assign the last word in the list to point to new word
-			lastNode = newNode; // Update last word pointer to new word
-		*/
 		}
 	}
 
@@ -68,7 +60,7 @@ class WordList {
 	public void print(){
 		temp = firstNode;
 		while(temp != null){ 
-			System.out.println("<" + temp.word + "> " + temp.location);
+			System.out.println("" + temp.word + " " + temp.location);
 			temp = temp.next;
 		}
 	}

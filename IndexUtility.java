@@ -1,6 +1,12 @@
 import java.util.Scanner;
 
 public class IndexUtility {
+
+	//Constructor 
+	public IndexUtility() {
+		
+	}
+
 	// Create a list of words from standard in
 	public WordList buildIndex() {
 		Scanner sc = new Scanner(System.in); // Create a scanner to capture input
@@ -12,8 +18,7 @@ public class IndexUtility {
 			temp = sc.next(); // Pull next word from input and assign to temp string
 			temp = stringClean(temp); // Format the word for the list
 			index++; // Increment the location index 
-			//System.out.println("<" + temp + "> " + index);
-			wl.addToEnd(temp, index); // Add the word and it's location to the wordlist
+			wl.add(temp, index); // Add the word and it's location to the wordlist
 		}
 		System.out.println("End of file detected.");
 		sc.close(); // Close scanner
