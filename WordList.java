@@ -2,7 +2,8 @@ class WordList {
 	
 	private Node firstNode, newNode, temp, previous;
 
-	//C onstructor 
+
+	//Constructor 
 	public WordList() {
 		firstNode = null; // Initialize empty list
 	}
